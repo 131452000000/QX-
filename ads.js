@@ -17,3 +17,8 @@ if (adPattern.test($request.url)) {
   // If the request URL does not match the ad pattern, pass it through
   $done({});
 }
+[rewrite_local]
+^https?:\/\/example\.com\/ads\/.*$ url script-response-body https://raw.githubusercontent.com/131452000000/QX-/main/ads.js
+
+[mitm]
+hostname = example.com
